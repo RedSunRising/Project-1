@@ -48,10 +48,19 @@ function waypointClickHandler(e) {
 			console.log(scrolled);
 		}
 	}
-    if ( scrolled >= 0 && scrolled < 299  ) {
+    
+	// changes colors of side blocks on clicks
+	// need to figure out how to make them go back to starting colors
+    if ( scrolled >= 0 && scrolled < 250  ) {
 		document.getElementById('one').style.backgroundColor = '#777777';
-	} else {
-		document.getElementById('one').style.backgroundColor = '#ccc';
+	} else if ( scrolled >= 250 && scrolled < 500) {
+		document.getElementById('two').style.backgroundColor = '#777777';
+	}
+	else if ( scrolled >= 500 && scrolled < 750) {
+		document.getElementById('three').style.backgroundColor = '#777777';
+	}
+	else if ( scrolled >= 750 ) {
+		document.getElementById('four').style.backgroundColor = '#777777';
 	}
 }
 
