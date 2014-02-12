@@ -141,6 +141,12 @@ nav ol li {
 	background-color: #D12121;
 }
 
+.active-waypoint:hover {
+	-webkit-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+  	transform: scale(1.1);
+}
+
 li div {
 	background-color: #EEE;
 

@@ -119,9 +119,3 @@ function MouseWheelHandler(e) {
 	
 	updateWaypoints();
 }
-
-/*console.log(scrolled);
-// make the asides change with scroll event
-while ( scrolled > 0 && scrolled < 299){
-	document.getElementById('one').style.backgroundColor = '#000000';
-}*/
