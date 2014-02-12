@@ -87,6 +87,35 @@ function MouseWheelHandler(e) {
 	scrolled = Math.min(Math.max(0, scrolled - rawScrolled), scrollTotal);
 
 	document.getElementsByTagName('header')[0].innerHTML = scrolled;
+
+	//allows for aside changes when there is a MouseWheel event
+	//currently only changes color. Will play with images next
+	if ( scrolled >= 0 && scrolled < 250  ) {
+		document.getElementById('one').style.backgroundColor = '#777777';
+	} else {
+		document.getElementById('one').style.backgroundColor = '#000';
+	}
+	
+	if ( scrolled >= 250 && scrolled < 500) {
+		document.getElementById('two').style.backgroundColor = '#777777';
+	}
+	else {
+		document.getElementById('two').style.backgroundColor = '#000';
+	}
+	
+	if ( scrolled >= 500 && scrolled < 750) {
+		document.getElementById('three').style.backgroundColor = '#777777';
+	}
+	else {
+		document.getElementById('three').style.backgroundColor = '#000';
+	}
+	
+	if ( scrolled >= 750) {
+		document.getElementById('four').style.backgroundColor = '#777777';
+	}
+	else {
+		document.getElementById('four').style.backgroundColor = '#000';
+	}
 	
 	updateWaypoints();
 }
