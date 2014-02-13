@@ -16,6 +16,7 @@ for (i = 0; i < waypoints.length; i++) {
 	waypoints[i].addEventListener("click", waypointClickHandler, false);
 }
 
+
 function updateWaypoints() {
 	fractionScrolled = scrolled / scrollTotal;
 
@@ -40,7 +41,7 @@ function updateWaypoints() {
 }
 
 function waypointClickHandler(e) {
-	console.log('cilck');
+	console.log('click');
 	for (i = 0; i < waypoints.length; i++) {
 		if (waypoints[i] === this) {
 			scrolled = (i+1)*100;
