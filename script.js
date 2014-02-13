@@ -2,7 +2,6 @@ var scrollTotal = 1000;
 var scrolled = 0; // A variable to keep track of how far we've scrolled.
 var fractionScrolled = scrolled / scrollTotal;
 
-
 // You can read more about the mosuewheel event at https://developer.mozilla.org/en-US/docs/DOM/DOM_event_reference/mousewheel
 if (document.addEventListener) {
 	document.addEventListener("mousewheel", MouseWheelHandler, false);
@@ -15,7 +14,6 @@ for (i = 0; i < waypoints.length; i++) {
 	// https://developer.mozilla.org/en-US/docs/Web/Reference/Events/click
 	waypoints[i].addEventListener("click", waypointClickHandler, false);
 }
-
 
 function updateWaypoints() {
 	fractionScrolled = scrolled / scrollTotal;
@@ -45,6 +43,7 @@ function waypointClickHandler(e) {
 	for (i = 0; i < waypoints.length; i++) {
 		if (waypoints[i] === this) {
 			scrolled = (i+1)*100;
+			document.getElementsByTagName('header')[0].innerHTML = scrolled;
 			updateWaypoints();
 			console.log(scrolled);
 		}
@@ -120,4 +119,3 @@ function MouseWheelHandler(e) {
 	}
 	
 	updateWaypoints();
-}
