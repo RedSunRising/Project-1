@@ -52,7 +52,7 @@ function waypointClickHandler(e) {
     
 	// changes colors of side blocks on clicks
 	// reverts back to orginal black when other waypoint is clicked
-    if ( scrolled >= 0 && scrolled < 250  ) {
+    if ( scrolled > 0 && scrolled < 250  ) {
 		document.getElementById('one').style.backgroundColor = '#777777';
 	} else {
 		document.getElementById('one').style.backgroundColor = '#000';
@@ -87,12 +87,13 @@ function MouseWheelHandler(e) {
 	var rawScrolled = Math.max(-1, Math.min(1, e.wheelDelta));
 	scrolled = Math.min(Math.max(0, scrolled - rawScrolled), scrollTotal);
 
-	document.getElementsByTagName('header')[0].innerHTML = scrolled;
+	document.getElementsByTagName('header')[0].innerHTML = "Project 1";
 
 	//allows for aside changes when there is a MouseWheel event
 	//currently only changes color. Will play with images next
-	if ( scrolled >= 0 && scrolled < 250  ) {
+	if ( scrolled > 0 && scrolled < 250  ) {
 		document.getElementById('one').style.backgroundColor = '#777777';
+		document.getElementsByTagName('header')[0].innerHTML = scrolled;
 	} else {
 		document.getElementById('one').style.backgroundColor = '#000';
 	}
