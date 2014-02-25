@@ -119,3 +119,10 @@ function MouseWheelHandler(e) {
 	}
 	
 	updateWaypoints();
+}
+
+function getCurrentWaypoint(){
+
+	// gets the id of the active waypoint and sets the variable to it.
+	var currentActiveWaypoint = document.getElementsByClassName('active-waypoint')[0].id;
+}
