@@ -93,6 +93,7 @@ aside {
 	width: 128px;
 	height: 23.3%;
 	position: absolute;
+	-webkit-transition: 300ms linear;
 }
 
 .right {
@@ -153,7 +154,7 @@ nav ol li {
   	transform: scale(1.2);
 }
 
-li div {
+li div.waypoint {
 	background-color: #EEE;
 
 	position: relative;
