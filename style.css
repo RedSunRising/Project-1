@@ -6,6 +6,7 @@ Check out https://developer.mozilla.org/en-US/docs/Web/CSS/calc for more.
 html, body {
 	height: 100%;
 	margin: 0;
+	font-family: 'Audiowide', cursive;
 }
 
 body {
@@ -21,7 +22,6 @@ header, footer {
 	line-height: 64px; /* By making the line-height as tall as the header, we vertically center the text */
 
 	color: #EEE;
-	font-family: 'Audiowide', cursive;
 	font-size: 2em;
 	text-align: center;
 	text-transform: uppercase;
@@ -93,7 +93,7 @@ aside {
 	width: 128px;
 	height: 23.3%;
 	position: absolute;
-	-webkit-transition: 300ms linear;
+	-webkit-transition: 1000ms linear;
 }
 
 .right {
@@ -120,6 +120,8 @@ nav {
 	width: 32px;
 	height: 100%;
 	left: calc(100% - 32px * 1.5);
+	background-color: black;
+	-webkit-transition: 5000ms linear;
 }
 
 nav ol {
@@ -142,16 +144,17 @@ nav ol li {
 	background-color: #F2BC1B;
 }
 
-.active-waypoint:hover {
+/*.active-waypoint:hover {
 	-webkit-transform: scale(1.2);
 	-ms-transform: scale(1.2);
   	transform: scale(1.2);
 }
-
+*/
 .waypoint:hover {
 	-webkit-transform: scale(1.2);
 	-ms-transform: scale(1.2);
   	transform: scale(1.2);
+  	background-color: gray;
 }
 
 li div.waypoint {
@@ -165,4 +168,12 @@ li div.waypoint {
 
 	margin-right: auto;
 	margin-left: auto;	
+}
+
+.hover-text {
+	background-color: white;
+	position: relative;
+	left: 20px;
+	top: 15px;
+	visibility: visible;
 }

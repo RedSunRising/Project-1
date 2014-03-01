@@ -99,6 +99,7 @@ function MouseWheelHandler(e) {
 	
 	if ( scrolled >= 250 && scrolled < 500) {
 		document.getElementById('two').style.backgroundColor = '#777777';
+		document.getElementsByTagName('header')[0].innerHTML = scrolled;
 	}
 	else {
 		document.getElementById('two').style.backgroundColor = '#000';
@@ -106,13 +107,16 @@ function MouseWheelHandler(e) {
 	
 	if ( scrolled >= 500 && scrolled < 750) {
 		document.getElementById('three').style.backgroundColor = '#777777';
+		document.getElementsByTagName('header')[0].innerHTML = scrolled;
 	}
 	else {
 		document.getElementById('three').style.backgroundColor = '#000';
+
 	}
 	
 	if ( scrolled >= 750) {
 		document.getElementById('four').style.backgroundColor = '#777777';
+		document.getElementsByTagName('header')[0].innerHTML = scrolled;
 	}
 	else {
 		document.getElementById('four').style.backgroundColor = '#000';
