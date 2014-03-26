@@ -121,7 +121,6 @@ nav {
 	height: 100%;
 	left: calc(100% - 32px * 1.5);
 	background-color: black;
-	-webkit-transition: 5000ms linear;
 }
 
 nav ol {
@@ -142,6 +141,7 @@ nav ol li {
 
 .active-waypoint {
 	background-color: #F2BC1B;
+	-webkit-transition: 1000ms linear;
 }
 
 /*.active-waypoint:hover {
@@ -171,9 +171,12 @@ li div.waypoint {
 }
 
 .hover-text {
-	background-color: white;
+	color: white;
 	position: relative;
-	left: 20px;
-	top: 15px;
+	left: -50px;
+	visibility: hidden;
+}
+
+.active-hover-text {
 	visibility: visible;
 }

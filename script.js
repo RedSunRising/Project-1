@@ -13,6 +13,8 @@ for (i = 0; i < waypoints.length; i++) {
 	// Here we attach a handler to the click event for every waypoint,
 	// https://developer.mozilla.org/en-US/docs/Web/Reference/Events/click
 	waypoints[i].addEventListener("click", waypointClickHandler, false);
+	/*waypoints[i].addEventListener("onmouseover", showHoverText, false);
+	waypoints[i].addEventListener("onmouseout", hideHoverText, false);*/
 }
 
 function updateWaypoints() {
@@ -27,15 +29,26 @@ function updateWaypoints() {
 		
 		if ( i == whichWaypoint ) {
 			currentWaypoint.classList.add('active-waypoint');
+			showClickText(i);
 		}
 		
 		else {
 			currentWaypoint.classList.remove('active-waypoint');
+			hideCLickText();
 		}
 	}
 
 	// Seek to the proportional time of the 38s clip of Bey's "Countdown"
 	document.getElementById('Raven').currentTime = fractionScrolled * 38.0;
+}
+function showClickText(i){
+	var currentClickText = document.getElementById('hover-text-' + i);
+	currentClickText.classList.add('active-hover-text');
+}
+
+function hideCLickText(){
+	var currentClickText = document.getElementById('hover-text-' + i);
+		currentClickText.classList.remove('active-hover-text');
 }
 
 function waypointClickHandler(e) {
