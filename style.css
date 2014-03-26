@@ -180,3 +180,6 @@ li div.waypoint {
 .active-hover-text {
 	visibility: visible;
 }
+.hover-text:hover{
+	visibility: visible;
+}

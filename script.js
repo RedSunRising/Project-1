@@ -13,10 +13,28 @@ for (i = 0; i < waypoints.length; i++) {
 	// Here we attach a handler to the click event for every waypoint,
 	// https://developer.mozilla.org/en-US/docs/Web/Reference/Events/click
 	waypoints[i].addEventListener("click", waypointClickHandler, false);
-	/*waypoints[i].addEventListener("onmouseover", showHoverText, false);
-	waypoints[i].addEventListener("onmouseout", hideHoverText, false);*/
+	waypoints[i].addEventListener("mouseover", showHoverText, false);
+	//waypoints[i].addEventListener("mouseout", hideHoverText, false);
 }
 
+function showHoverText(e){
+	var currentActiveWaypoint = document.elementFromPoint().id;
+	console.log(currentActiveWaypoint);
+	
+	for (i = 0; i < 10; i++){
+		var currentHoverText = document.getElementById('waypoint-' + i);
+		var currentId = currentHoverText.id;
+
+		if (currentId == currentActiveWaypoint){
+			document.getElementById('hover-text-' + i).classList.add('active-hover-text');
+		}
+	}
+
+}
+
+/*function hideHoverText(e){
+	hideCLickText();
+}*/
 function updateWaypoints() {
 	fractionScrolled = scrolled / scrollTotal;
 
@@ -143,3 +161,4 @@ function getCurrentWaypoint(){
 	// gets the id of the active waypoint and sets the variable to it.
 	var currentActiveWaypoint = document.getElementsByClassName('active-waypoint')[0].id;
 }
+
