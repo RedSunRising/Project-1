@@ -9,7 +9,7 @@ if (document.addEventListener) {
 
 
 var waypoints = document.getElementsByClassName('waypoint');
-for (i = 0; i < waypoints.length; i++) {
+for (var i = 0; i < waypoints.length; i++) {
 	// Here we attach a handler to the click event for every waypoint,
 	// https://developer.mozilla.org/en-US/docs/Web/Reference/Events/click
 	waypoints[i].addEventListener("click", waypointClickHandler, false);
@@ -17,19 +17,41 @@ for (i = 0; i < waypoints.length; i++) {
 	//waypoints[i].addEventListener("mouseout", hideHoverText, false);
 }
 
-function showHoverText(e){
-	var currentActiveWaypoint = document.elementFromPoint().id;
-	console.log(currentActiveWaypoint);
-	
-	for (i = 0; i < 10; i++){
-		var currentHoverText = document.getElementById('waypoint-' + i);
-		var currentId = currentHoverText.id;
+var listElements = document.getElementsByTagName('li');
+for (var i = 0; i < listElements.length; i++){
+	//listElements[i].addEventListener("mouseover", showHoverText, false);
+	//listElements[i].addEventListener("mouseout", hideHoverText, false);
+}
 
-		if (currentId == currentActiveWaypoint){
+function showHoverText(e){
+	//var currentHoveredWaypoint = e.
+	console.log(e);
+
+	for (var i = 0; i < 10; i++){
+		var currentHoverText = document.getElementById('waypoint-' + i);
+		//var currentId = currentHoverText.id;
+
+		if (currentHoveredWaypoint == waypoints[i]){
 			document.getElementById('hover-text-' + i).classList.add('active-hover-text');
 		}
 	}
 
+}
+
+function hideHoverText(e){	
+	var test2 = document.getElementsByClassName('active-hover-text')[0];
+	test2.classList.remove('active-hover-text');
+	console.log(test2);
+	//test2.classList.remove('active-hover-text');
+	/*for (i = 0; i < 10; i++){
+		var currentHover = document.getElementById('hover-text-' + i)
+		console.log(currentHover);
+		}*/
+		/*var currentHoverId = currentHover.id;
+		if (currentHoverId == currentHover){
+			test.classList.remove('active-hover-text');
+
+		}*/
 }
 
 /*function hideHoverText(e){
@@ -154,11 +176,5 @@ function MouseWheelHandler(e) {
 	}
 	
 	updateWaypoints();
-}
-
-function getCurrentWaypoint(){
-
-	// gets the id of the active waypoint and sets the variable to it.
-	var currentActiveWaypoint = document.getElementsByClassName('active-waypoint')[0].id;
 }
 
