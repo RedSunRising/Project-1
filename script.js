@@ -13,25 +13,26 @@ for (var i = 0; i < waypoints.length; i++) {
 	// Here we attach a handler to the click event for every waypoint,
 	// https://developer.mozilla.org/en-US/docs/Web/Reference/Events/click
 	waypoints[i].addEventListener("click", waypointClickHandler, false);
-	waypoints[i].addEventListener("mouseover", showHoverText, false);
+	//waypoints[i].addEventListener("mouseover", showHoverText, false);
 	//waypoints[i].addEventListener("mouseout", hideHoverText, false);
 }
 
 var listElements = document.getElementsByTagName('li');
 for (var i = 0; i < listElements.length; i++){
-	//listElements[i].addEventListener("mouseover", showHoverText, false);
+	listElements[i].addEventListener("mouseover", showHoverText, false);
 	//listElements[i].addEventListener("mouseout", hideHoverText, false);
 }
 
 function showHoverText(e){
-	//var currentHoveredWaypoint = e.
-	console.log(e);
+	var currentHoveredWaypoint = event.target.id;
+	console.log(currentHoveredWaypoint);
 
 	for (var i = 0; i < 10; i++){
 		var currentHoverText = document.getElementById('waypoint-' + i);
-		//var currentId = currentHoverText.id;
+		var currentId = currentHoverText.id;
+		console.log(currentId);
 
-		if (currentHoveredWaypoint == waypoints[i]){
+		if (currentHoveredWaypoint == currentId){
 			document.getElementById('hover-text-' + i).classList.add('active-hover-text');
 		}
 	}
@@ -40,7 +41,6 @@ function showHoverText(e){
 
 function hideHoverText(e){	
 	var test2 = document.getElementsByClassName('active-hover-text')[0];
-	test2.classList.remove('active-hover-text');
 	console.log(test2);
 	//test2.classList.remove('active-hover-text');
 	/*for (i = 0; i < 10; i++){
