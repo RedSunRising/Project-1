@@ -18,44 +18,21 @@ for (var i = 0; i < waypoints.length; i++) {
 var listElements = document.querySelectorAll('nav li div.waypoint');
 for (var i = 0; i < listElements.length; i++){
 	listElements[i].addEventListener("mouseover", showHoverText, false);
-	//listElements[i].addEventListener("mouseout", hideHoverText, false);
+	listElements[i].addEventListener("mouseout", hideHoverText, false);
 }
 
 function showHoverText(e){
 	var currentHoveredWaypoint = event.target;
 	console.log(currentHoveredWaypoint);
 
-	/*for (var j = 0; j < currentHoveredWaypoint.parentNode.children.length; j++) {
-
-	}*/
-
 	currentHoveredWaypoint.parentNode.getElementsByClassName('hover-text')[0].classList.add('active-hover-text');
-
-/*	for (var i = 0; i < 10; i++){
-		var currentHoverText = document.getElementById('waypoint-' + i);
-		var currentId = currentHoverText.id;
-		console.log(currentId);
-
-		if (currentHoveredWaypoint == currentId){
-			document.getElementById('hover-text-' + i).classList.add('active-hover-text');
-		}
-	}*/
 
 }
 
 function hideHoverText(e){	
-	var test2 = document.getElementsByClassName('active-hover-text')[0];
-	console.log(test2);
-	//test2.classList.remove('active-hover-text');
-	/*for (i = 0; i < 10; i++){
-		var currentHover = document.getElementById('hover-text-' + i)
-		console.log(currentHover);
-		}*/
-		/*var currentHoverId = currentHover.id;
-		if (currentHoverId == currentHover){
-			test.classList.remove('active-hover-text');
-
-		}*/
+	var currentBlock = document.getElementsByClassName('active-hover-text')[0];
+	currentBlock.classList.remove('active-hover-text');
+	
 }
 
 function updateWaypoints() {
