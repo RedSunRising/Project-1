@@ -17,17 +17,23 @@ for (var i = 0; i < waypoints.length; i++) {
 	//waypoints[i].addEventListener("mouseout", hideHoverText, false);
 }
 
-var listElements = document.getElementsByTagName('li');
+var listElements = document.querySelectorAll('nav li div.waypoint');
 for (var i = 0; i < listElements.length; i++){
 	listElements[i].addEventListener("mouseover", showHoverText, false);
 	//listElements[i].addEventListener("mouseout", hideHoverText, false);
 }
 
 function showHoverText(e){
-	var currentHoveredWaypoint = event.target.id;
+	var currentHoveredWaypoint = event.target;
 	console.log(currentHoveredWaypoint);
 
-	for (var i = 0; i < 10; i++){
+	/*for (var j = 0; j < currentHoveredWaypoint.parentNode.children.length; j++) {
+
+	}*/
+
+	currentHoveredWaypoint.parentNode.getElementsByClassName('hover-text')[0].classList.add('active-hover-text');
+
+/*	for (var i = 0; i < 10; i++){
 		var currentHoverText = document.getElementById('waypoint-' + i);
 		var currentId = currentHoverText.id;
 		console.log(currentId);
@@ -35,7 +41,7 @@ function showHoverText(e){
 		if (currentHoveredWaypoint == currentId){
 			document.getElementById('hover-text-' + i).classList.add('active-hover-text');
 		}
-	}
+	}*/
 
 }
 
