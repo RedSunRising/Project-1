@@ -13,8 +13,6 @@ for (var i = 0; i < waypoints.length; i++) {
 	// Here we attach a handler to the click event for every waypoint,
 	// https://developer.mozilla.org/en-US/docs/Web/Reference/Events/click
 	waypoints[i].addEventListener("click", waypointClickHandler, false);
-	//waypoints[i].addEventListener("mouseover", showHoverText, false);
-	//waypoints[i].addEventListener("mouseout", hideHoverText, false);
 }
 
 var listElements = document.querySelectorAll('nav li div.waypoint');
@@ -34,9 +32,6 @@ function hideHoverText(e){
 	test2.classList.remove('active-hover-text');
 }
 
-/*function hideHoverText(e){
-	hideCLickText();
-}*/
 function updateWaypoints() {
 	fractionScrolled = scrolled / scrollTotal;
 

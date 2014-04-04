@@ -167,11 +167,13 @@ li div.waypoint {
 	height: 16px;
 
 	margin-right: auto;
-	margin-left: auto;	
+	margin-left: auto;
+		
+
 }
 
 .hover-text {
-	color: white;
+	color: 'white';
 	position: relative;
 	left: -50px;
 	visibility: hidden;
