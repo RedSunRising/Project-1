@@ -173,7 +173,7 @@ li div.waypoint {
 }
 
 .hover-text {
-	color: 'white';
+	color: white;
 	position: relative;
 	left: -50px;
 	visibility: hidden;
