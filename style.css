@@ -173,12 +173,13 @@ li div.waypoint {
 }
 
 .hover-text {
-	color: white;
+	color: black;
 	position: relative;
 	left: -50px;
-	visibility: hidden;
+	-webkit-transition: 1000ms linear;
 }
 
 .active-hover-text {
-	visibility: visible;
+	color: white;
+	-webkit-transition: 1000ms linear;
 }
